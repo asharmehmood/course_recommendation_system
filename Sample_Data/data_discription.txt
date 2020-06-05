@@ -1,0 +1,47 @@
+Registration:
+learner_id (unhinge entity).
+gender (categories).
+country (categories).
+age_group (categories).
+education (categories): represents the student's level of education.
+employment (categories): represents the student's employment status.
+enrolled (time stamp): indicates when the student first registered on the course.
+completed (time stamp): indicates when the student completed the course.
+upgraded (time stamp): indicates when the student upgraded his subscription to the course for life-long access to the course materials.
+
+step_log
+learner_id (unhinge entity).
+step (integer): represents the step number. Every week has one or more educational steps to navigate through. The number on the left represents the week and the one on the right represents the step number in that week.
+started (timestamp): indicates when the student first accessed the step.
+completed (timestamp): indicates when the student completed the step by clicking on "mark as completed" button, this action is optional as a student can go to other steps or weeks without completing the previous one.
+
+steps:-
+this table explains the type of each step's content
+step (integer): represent the step number. the number on the left represents the week and the one on the right represents the step number in that week.
+type (categories): represents the type of step contents.
+
+
+quizzes:-
+every week of the course has steps to go through. some of the steps have quizzes the student can optionally solve.
+learner_id (unhinge entity).
+week_number (integer): represents which week the question was asked in.
+step_number(integer): represent which step of that week's contents the question was asked in. Note every week has a number of steps to navigate through.  
+question_number (integer).
+answer (integer): the answer given by the student.
+submitted (timestamp): indicates when the student submitted the answer.
+correct (categories): indicates if the answer submitted by the student was correct or not.
+
+forum:-
+students have the option to comment on any step during their study journey.
+id (unhinge entity).
+author_id (unhinge entity): this matches the learner_id.
+parent_id (integer): this represents the parent comment ID if this was a reply to a previously posted comment.
+step (integer): represents the step number. Every week has one or more educational steps to navigate through. The number on the left represents the week and the one on the right represents the step number in that week.
+week_number (integer): represents which week the question was asked in.
+step_number(integer): represent which step of that week's contents the question was asked in. Note every week has a number of steps to navigate through.  
+text (text): represents the comment or reply posted by the student.
+timestamp (timestamp): indicates when the student posted the comment. 
+likes (integer): represents the number of likes received by other students.
+SA (categories): represents the sentiment analysis whether the comment was positive, negative or neutral.
+word_count (integer): represents the number of words in the comment/reply.
+char_count(integer): represents the number of characters in the comment/reply.
